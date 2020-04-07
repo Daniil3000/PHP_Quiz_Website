@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="http://localhost/finalproject/Quizzerland_FFF/" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- PAGE settings -->
+    <title>Quizzerland{% block title %}-Some page{% endblock %} </title>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- bootstrap js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/ce3727e4c1.js" crossorigin="anonymous"></script>
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Tajawal&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rye&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/style/main.css">
+</head>
+<body>
+<!-- Hero Image -->
+<div class="hero" data-aos="zoom-out">
+    <div class="hero-text">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>{% block hero_title %}QuizzerLand{% endblock %}</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>{% block hero_description %}A place where your trivia knowledge becomes useful{% endblock %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Navigation bar -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse-target">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapse-target">
+        <a href="">
+            <span class="navbar-brand">QuizzerLand</span>
+            <a class="navbar-brand"><img src="assets/img/logo-icon.png" alt="icon"></a>
+        </a>
+        {% if  isLoggedIn %}{% include "in_menu.twig" %}
+        {% else  %}{% include "out_menu.twig" %}
+        {% endif %}
+    </div>
+</nav>
+<!-- Greetings -->
+<section class="greetings">
+    <div class="row" id="begin">
+        <div class="answer my-2 col-12 text-center">
+            {% block  greetings%}<h1>Welcome to Quizzerland!</h1>{% endblock%}
+        </div>
+    </div>
+</section>
+<hr>
+{% if message is not empty %}
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="alert alert-warning">
+                <h4 class="alert-heading text-center">Attention!</h4>
+                <p class='text-center'>{{message}}</p>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% if success is not empty %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="alert alert-success">
+            <h4 class="alert-heading text-center">Success!</h4>
+            <p class='text-center'>{{success}}</p>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% if error is not empty %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="alert alert-danger">
+            <h4 class="alert-heading text-center">Error!</h4>
+            <p class='text-center'>{{error}}</p>
+        </div>
+    </div>
+</div>
+{% endif %}
+<!-- main content -->
+<main class="container" id="main">
+    {% block content %}Default content{% endblock %}
+
+</main>
+<!-- Print button -->
+<div class="row">
+    <div class="mr-5 ml-auto col-auto">
+        <button class="btn btn-lg btn-outline-info m-2" name="btnPrint" onclick="printContent()">Print this page</button>
+    </div>
+</div>
+<!-- footer -->
+{% include "footer.twig" %}
+
+<!-- AOS script -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<!-- custom javascript -->
+<script src="assets/js/main.js"></script>
+<script>
+    AOS.init({
+        offset: 200,
+        duration: 1000
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+{
+    "require": {
+        "sergeytsalkov/meekrodb": "^2.3",
+        "monolog/monolog": "^2.0",
+        "twig/twig": "^3.0",
+        "bcosca/fatfree": "^3.7",
+        "mpdf/mpdf": "^8.0"
+    }
+}

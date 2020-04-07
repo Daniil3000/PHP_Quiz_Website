@@ -1,0 +1,136 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.hero {
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url("../img/hero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-text h1 {
+    font-family: 'Rye', cursive;
+    font-size: 7em;
+    margin: 0;
+}
+
+.hero-text p {
+    font-family: 'Courgette', cursive;
+    font-size: 1.5em;
+}
+
+@media (max-width: 1048px) {
+    .hero-text h1{font-size: 6.5em;}
+    .hero-text p {font-size: 1.4em;}
+}
+
+@media (max-width: 1000px) {
+    .hero-text h1{font-size: 5.5em;}
+    .hero-text p {font-size: 1.35em;}
+}
+
+@media (max-width: 860px) {
+    .hero-text h1{font-size: 5em;}
+    .hero-text p {font-size: 1.1em;}
+}
+
+@media (max-width: 780px) {
+    .hero-text h1{font-size: 4.5em;}
+    .hero-text p {font-size: 1em;}
+}
+
+@media (max-width: 760px) {
+    .hero-text h1{font-size: 4em;}
+    .hero-text p {font-size: 1em;}
+}
+
+@media (max-width: 630px) {
+    .hero-text h1{font-size: 3.7em;}
+    .hero-text p {font-size: 1em;}
+}
+
+@media (max-width: 580px) {
+    .hero-text h1{font-size: 3.5em;}
+    .hero-text p {font-size: 1em;}
+}
+
+@media (max-width: 492px) {
+    .hero-text h1{font-size: 3em;}
+    .hero-text p {font-size: 0.9em;}
+}
+
+@media (max-width: 420px) {
+    .hero-text h1{font-size: 2em;}
+    .hero-text p {font-size: 0.7em;}
+}
+
+.navbar-brand {
+    font-family: 'Rye', cursive;
+    margin-right: 0.5rem;
+}
+
+.navbar-nav i {
+    margin-right: 0.5em;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.3rem;
+    width: 100vw;
+    background-color: #DCDCDC;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+}
+
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0;
+}
+
+.card h3 {
+    margin-bottom: 2rem;
+}
+
+.card > div{
+    padding: 2rem;
+}
+
+.card:nth-child(even) img {
+    order:2;
+}
+
+.card:nth-of-type(1) {
+    margin-top: 2rem;
+}
+
+.btn {
+    border-radius: 0;
+}
+.btn:hover {
+    opacity: 0.7;
+}
+
+@media(max-width: 768px)  {
+    .card {
+        display: block;
+    }
+}

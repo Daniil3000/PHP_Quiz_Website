@@ -1,0 +1,30 @@
+<ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="highscores.php">Highscores</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="profile.php">My Profile</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown-target" href="#">
+            Available Quizes
+            <span class="caret"></span> <!-- adds an arrow next to Dropdown name-->
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdown-target">
+            {% for quiz in quizzes %}
+                <a class="dropdown-item" href="quiz/{{ quiz.id }}/1">{{ quiz.title }}</a>
+                {% if loop.index != loop.last %}
+                    <div class="dropdown-divider"></div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </li>
+</ul>
+<ul class="navbar-nav ml-auto">
+    <li>
+        <span class="navbar-text"><i class="fas fa-user"></i>{{ username }}</span>
+    </li>
+    <li>
+        <a class="nav-link" href="logout"><i class="fas fa-sign-out-alt"></i>Sign Out</a>
+    </li>
+</ul>

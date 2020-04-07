@@ -1,0 +1,27 @@
+{% extends "base.twig" %}
+{% block title %} - Quiz - {{ quiz.title }}{% endblock %}
+{% block  greetings%}<h1>{{ quiz.title }}</h1>{% endblock%}
+{% block content %}
+    <div class="my-3 quiz_window" data-aos="zoom-in">
+        <section class="m-2 question">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h3>{{question}}</h3>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="answers">
+            <form method="post">
+                <div class="row">
+                    {% for answer in answers %}
+                    <div class="answer my-2 col-12 col-md-6 text-center">
+                        <button type="submit" class="btn btn-lg btn-dark" name="btnAnswer" value="{{answer}}">{{answer}}</button>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </form>
+        </section>
+    </div>
+{% endblock %}

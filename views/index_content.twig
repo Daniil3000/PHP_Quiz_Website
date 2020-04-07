@@ -1,0 +1,43 @@
+{% if isLoggedIn == true %}{% for quiz in quizzes %}
+
+<section class="card" data-aos="zoom-in">
+    <img src="{{quiz.image}}" alt="pic">
+    <div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3>{{ quiz.title }}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p>{{quiz.description}}</p>
+            </div>
+        </div>
+        <a href="quiz/{{ quiz.id }}/1" class="btn btn-dark">Start Quiz</a>
+    </div>
+</section>
+
+    {%endfor%}
+
+{% else %}
+    <section class="card" data-aos="zoom-in">
+        <img src="assets/img/start.jpg" alt="pic">
+        <div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h3>Greetings my Friend!</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 ext-center">
+                    <p>Wanna have some fun? Log in and see what happens!</p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-around">
+                <a href="login" class="btn btn-lg btn-dark"><i class="fas fa-sign-in-alt"></i> Log in</a>
+                <a href="register" class="btn btn-lg btn-dark"><i class="fas fa-user-plus"></i> Sign Up</a>
+            </div>
+        </div>
+    </section>
+{%endif %}
+

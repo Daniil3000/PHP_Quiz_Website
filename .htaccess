@@ -1,0 +1,11 @@
+RewriteEngine On
+
+RewriteBase /finalproject/Quizzerland_FFF/
+
+# provided route is not: a file/ a directore/ a link
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+
+# L - this rule is last to process; QSA - qerry string append to the request
+RewriteRule .* index.php [L,QSA]
